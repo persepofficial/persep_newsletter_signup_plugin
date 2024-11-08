@@ -10,3 +10,13 @@
 
 
 
+function display_custom_message($content) {
+    if (is_single()) {  // Only on single post pages
+        $custom_message = '<p>Thank you for reading! Visit our website for more.</p>';
+        $content .= $custom_message;  // Append the message to the content
+    }
+    return $content;
+}
+
+// Hook into the 'the_content' filter to add the custom message
+add_filter('the_content', 'display_custom_message');
