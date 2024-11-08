@@ -1,8 +1,8 @@
 <?php
 /**
-* Plugin Name: test-plugin
+* Plugin Name: Newsletter Sign Up
 * Plugin URI: https://www.persep.co/
-* Description: Test.
+* Description: A Plugin that allows to add a newletter signup to website
 * Version: 0.1
 * Author: Brandon Jones
 * Author URI: https://www.persep.co/
