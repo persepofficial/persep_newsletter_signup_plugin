@@ -1,22 +1,34 @@
 <?php
-/**
-* Plugin Name: Newsletter Sign Up
-* Plugin URI: https://www.persep.co/
-* Description: A Plugin that allows to add a newletter signup to a website
-* Version: 0.1
-* Author: Brandon Jones
-* Author URI: https://www.persep.co/
-**/
+/*
+ * Plugin Name:       persep.co Modal Patterns
+ * Plugin URI:        https://example.com/plugins/the-basics/
+ * Description:       Handle the basics with this plugin.
+ * Version:           0.0.0
+ * Requires at least: 5.2
+ * Requires PHP:      7.2
+ * Author:            John Smith
+ * Author URI:        https://persep.co/
+ * License:           GPL v2 or later
+ * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+ * Update URI:        https://example.com/my-plugin/
+ * Text Domain:       my-basics-plugin
+ * Domain Path:       /languages
+ * Requires Plugins:  
+ */
 
-
-
-function display_custom_message($content) {
-    if (is_single()) {  // Only on single post pages
-        $custom_message = '<p>Thank you for reading! Visit our website for more.</p>';
-        $content .= $custom_message;  // Append the message to the content
-    }
-    return $content;
+//  If accessed directly, abort
+if ( ! defined( 'WPINC' ) ) {
+    die;
 }
 
-// Hook into the 'the_content' filter to add the custom message
-add_filter('the_content', 'display_custom_message');
+//  Create Patteren Category
+function wpdocs_block_pattern_category() {
+	register_block_pattern_category( 
+        'wpdocs-patterns', 
+        array(
+            'label' => __( 'persep.co Modal Patterns', 'text-domain' )
+        ) 
+    );
+}
+
+add_action( 'init', 'wpdocs_block_pattern_category' );
