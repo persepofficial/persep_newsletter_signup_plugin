@@ -24,7 +24,7 @@ if ( ! defined( 'WPINC' ) ) {
 //  Create Patteren Category
 function wpdocs_block_pattern_category() {
 	register_block_pattern_category( 
-        'wpdocs-patterns', 
+        'Modal Patterns', 
         array(
             'label' => __( 'persep.co Modal Patterns', 'text-domain' )
         ) 
